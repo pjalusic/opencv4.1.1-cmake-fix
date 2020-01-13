@@ -41,13 +41,13 @@ endif(WITH_CUDA)
 
 # --- Eigen ---
 if(WITH_EIGEN AND NOT HAVE_EIGEN)
-  find_package(Eigen3 QUIET)
+  find_package(Eigen3 3.0.0)
 
   if(Eigen3_FOUND)
-    if(TARGET Eigen3::Eigen)
+    #if(TARGET Eigen3::Eigen)
       # Use Eigen3 imported target if possible
-      list(APPEND OPENCV_LINKER_LIBS Eigen3::Eigen)
-      set(HAVE_EIGEN 1)
+      #list(APPEND OPENCV_LINKER_LIBS Eigen3::Eigen)
+      #set(HAVE_EIGEN 1)
     else()
       if(DEFINED EIGEN3_INCLUDE_DIRS)
         set(EIGEN_INCLUDE_PATH ${EIGEN3_INCLUDE_DIRS})
@@ -56,7 +56,7 @@ if(WITH_EIGEN AND NOT HAVE_EIGEN)
         set(EIGEN_INCLUDE_PATH ${EIGEN3_INCLUDE_DIR})
         set(HAVE_EIGEN 1)
       endif()
-    endif()
+    #endif()
     if(HAVE_EIGEN)
       if(DEFINED EIGEN3_WORLD_VERSION)  # CMake module
         set(EIGEN_WORLD_VERSION ${EIGEN3_WORLD_VERSION})
