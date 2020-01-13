@@ -4,10 +4,15 @@ Fix for building opencv 4.1.1 on Google Coral Dev Board. All changes needs to be
 
 ## How to
 
-either
-- download `OpenCVFindLibsPerf.diff` file and apply the changes:
+- clone this repository: 
+  ```bash
+  git clone https://github.com/pjalusic/opencv4.1.1-cmake-fix.git
+  ```
+- copy the .diff file into current folder 
+  ```bash
+  cp opencv4.1.1-cmake-fix/OpenCVFindLibsPerf.diff .
+  ```
+- apply the changes:
   ```bash
   git apply OpenCVFindLibsPerf.diff
   ```
-or
-- download `OpenCVFindLibsPerf.cmake` and replace existing
